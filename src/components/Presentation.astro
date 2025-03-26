@@ -1,0 +1,72 @@
+---
+import { SOCIAL } from "@/const/socials";
+---
+
+<div class="w-full grid grid-cols-5 grid-rows-7 gap-1">
+  <div class="col-span-2 row-span-2 justify-self-center">
+    <img
+      class="w-30 h-30 object-cover rounded-full border-[0.5px] border-primary-100"
+      src="/src/assets/images/photo.webp"
+      alt="Foto de un hombre joven con gafas, barba corta y cabello oscuro, usando una camiseta morada. Fondo con tonos azulados y efecto de iluminación sutil."
+    />
+  </div>
+  <div class="col-span-3 row-span-2 col-start-3 self-center">
+    <span
+      class="h-6 w-fit flex flex-row gap-2 items-center bg-green-100 px-2.5 rounded-full dark:bg-green-900 text-green-800 text-xs font-medium dark:text-green-300"
+      >Disponible para trabajar
+      <div class="pulser bg-[#19b513] w-2 h-2 rounded-full shadow-sm scale-100">
+      </div>
+    </span>
+  </div>
+  <div
+    class="col-span-5 row-span-2 row-start-3 flex flex-col justify-center gap-2 text-end text-4xl"
+  >
+    <p class="font-bold text-white">Hola, soy</p>
+    <h1 class="font-bold text-primary-800 dark:text-primary-100">
+      Edwin Contreras
+    </h1>
+  </div>
+  <div class="col-span-5 row-span-2 row-start-5">
+    <p class="text-base text-text-100">
+      +2 años de experiencia como <span class="text-primary-100"
+        >Ingeniero de Software.</span
+      > En constante aprendizaje, para mejorar mis conocimientos. Soy de Venezuela.
+      Enfocado en buscar soluciones con Software.
+    </p>
+  </div>
+  <div class="col-span-5 row-start-7 flex flex-row gap-2 justify-center">
+    {
+      SOCIAL.map((social) => (
+        <a
+          href={social.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="h-0 hover:-translate-y-2 hover:scale-110 transition-all"
+        >
+          <social.image.logo class="text-white w-8 h-8 hover:text-accent-100" />
+        </a>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .pulser {
+    animation: pulser 2s infinite;
+  }
+
+  @keyframes pulser {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(25, 181, 115, 0.7);
+    }
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 5px rgba(25, 181, 115, 0);
+    }
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(25, 181, 115, 0);
+    }
+  }
+</style>
