@@ -1,22 +1,43 @@
+---
+// Supports weights 100-800
+import "@fontsource-variable/ubuntu-sans";
+import "./src/styles/global.css";
+import Nav from "@/components/Nav.astro";
+interface Pros {
+  title: string;
+}
+
+const { title } = Astro.props as Pros;
+---
+
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Nav />
+    <slot />
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  ::root {
+    color-scheme: light dark;
+  }
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Ubuntu Sans Variable", sans-serif;
+    background: var(--color-bg-100);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
 </style>
