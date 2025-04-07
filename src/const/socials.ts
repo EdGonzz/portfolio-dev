@@ -14,6 +14,7 @@ export const SOCIAL: Social[] = [
     image: {
       logo: linkedin,
     },
+    class: "bg-[#086acc]/80 dark:bg-[#086acc]/80",
   },
   {
     id: "github",
@@ -23,6 +24,7 @@ export const SOCIAL: Social[] = [
     image: {
       logo: github,
     },
+    class: "bg-[#F5F5F5]/80 dark:bg-[#171717]/80",
   },
   {
     id: "mail",
@@ -32,6 +34,7 @@ export const SOCIAL: Social[] = [
     image: {
       logo: mail,
     },
+    class: "bg-[#EA4335]/80 dark:bg-[#EA4335]/80",
   },
   {
     id: "cv",
@@ -41,5 +44,6 @@ export const SOCIAL: Social[] = [
     image: {
       logo: cv,
     },
+    class: "bg-primary-100/80 dark:bg-primary-100/80",
   },
 ];

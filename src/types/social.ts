@@ -10,4 +10,5 @@ export interface Social {
   image: {
     logo: any;
   };
+  class: string;
 }
