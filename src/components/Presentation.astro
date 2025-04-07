@@ -1,5 +1,7 @@
 ---
-import { SOCIAL } from "@/const/socials";
+import Badge from "./Badge.astro";
+import Pulser from "./Pulser.astro";
+import SocialStack from "./SocialStack.astro";
 ---
 
 <div class="w-full grid grid-cols-5 grid-rows-7 gap-1">
@@ -11,12 +13,13 @@ import { SOCIAL } from "@/const/socials";
     />
   </div>
   <div class="col-span-3 row-span-2 col-start-3 self-center">
-    <span
-      class="h-6 w-fit flex flex-row gap-2 items-center bg-green-100 px-2.5 rounded-full dark:bg-green-900 text-green-800 text-xs font-medium dark:text-green-300"
-      >Disponible para trabajar
-      <div class="pulser bg-[#19b513] w-2 h-2 rounded-full shadow-sm scale-100">
-      </div>
-    </span>
+    <Badge
+      href="https://www.linkedin.com/in/edwin-contreras-1bb516247/"
+      class="text-xs font-medium bg-green-100/60 dark:text-green-300 dark:bg-green-900/60 text-green-800"
+    >
+      Disponible para trabajar
+      <Pulser />
+    </Badge>
   </div>
   <div
     class="col-span-5 row-span-2 row-start-3 flex flex-col justify-center gap-2 text-end text-4xl"
@@ -28,45 +31,13 @@ import { SOCIAL } from "@/const/socials";
   </div>
   <div class="col-span-5 row-span-2 row-start-5">
     <p class="text-base text-text-100">
-      +2 años de experiencia como <span class="text-primary-100"
-        >Ingeniero de Software.</span
-      > En constante aprendizaje, para mejorar mis conocimientos. Soy de Venezuela.
+      +2 años de experiencia como
+      <span class="text-primary-100"> Ingeniero de Software. </span>
+      En constante aprendizaje, para mejorar mis conocimientos. Soy de Venezuela.
       Enfocado en buscar soluciones con Software.
     </p>
   </div>
   <div class="col-span-5 row-start-7 flex flex-row gap-2 justify-center">
-    {
-      SOCIAL.map((social) => (
-        <a
-          href={social.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="h-0 hover:-translate-y-2 hover:scale-110 transition-all"
-        >
-          <social.image.logo class="text-white w-8 h-8 hover:text-accent-100" />
-        </a>
-      ))
-    }
+    <SocialStack />
   </div>
 </div>
-
-<style>
-  .pulser {
-    animation: pulser 2s infinite;
-  }
-
-  @keyframes pulser {
-    0% {
-      transform: scale(0.95);
-      box-shadow: 0 0 0 0 rgba(25, 181, 115, 0.7);
-    }
-    70% {
-      transform: scale(1);
-      box-shadow: 0 0 0 5px rgba(25, 181, 115, 0);
-    }
-    100% {
-      transform: scale(0.95);
-      box-shadow: 0 0 0 0 rgba(25, 181, 115, 0);
-    }
-  }
-</style>

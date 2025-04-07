@@ -1,0 +1,22 @@
+<div class="pulser bg-[#19b513] w-2 h-2 rounded-full shadow-sm scale-100"></div>
+
+<style>
+  .pulser {
+    animation: pulser 2s infinite;
+  }
+
+  @keyframes pulser {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(25, 181, 115, 0.7);
+    }
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 5px rgba(25, 181, 115, 0);
+    }
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(25, 181, 115, 0);
+    }
+  }
+</style>

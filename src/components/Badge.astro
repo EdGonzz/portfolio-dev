@@ -1,0 +1,17 @@
+---
+interface Props {
+  href?: string;
+  class?: string;
+  AnchorClass?: string;
+}
+
+const { href, class: className, AnchorClass } = Astro.props;
+---
+
+<a href={href} class={AnchorClass} target="_blank" rel="noopener noreferrer">
+  <span
+    class=`${className} w-fit flex flex-row gap-1 items-center py-1 px-2 rounded-full`
+  >
+    <slot />
+  </span>
+</a>
