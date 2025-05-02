@@ -3,13 +3,12 @@
 @theme {
   --color-accent-100: #d9acf5;
   --color-accent-200: #fff4ff;
-  --color-bg-100: #222831;
+  --color-bg-100: #523956;
   --color-bg-200: #393e46;
-  --color-bg-300: #454e59;
   --color-primary-100: #d29fff;
   --color-primary-200: #c168ff;
   --color-primary-300: #fdf6fd;
-  --color-text-100: #d5bcd5;
+  --color-text-100: #ffddff;
 }
 
 .link {
