@@ -1,0 +1,64 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image: {
+    src: string;
+    alt: string;
+  };
+  links: {
+    github: {
+      url: string;
+      logo: any;
+    };
+    demo: {
+      url: string;
+      logo: any;
+    };
+  };
+  technologies: string[];
+}
+
+const { title, description, image, links, technologies } = Astro.props;
+---
+
+<article
+  class="max-w-sm rounded-lg bg-bg-200 dark:bg-bg-100 shadow-lg flex flex-col gap-2"
+>
+  <img class="rounded-t-lg" src={image.src} alt={image.alt} />
+  <div class="p-5 space-y-2">
+    <header class="flex flex-row justify-between items-center">
+      <h3 class="text-2xl text-primary-300">{title}</h3>
+      <div class="flex gap-3">
+        <a
+          href={links.github.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-primary-300 hover:text-primary-200"
+        >
+          <links.github.logo class="size-8 md:size-10 text-white" />
+        </a>
+        <a
+          href={links.demo.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-primary-300 hover:text-primary-200"
+        >
+          <links.demo.logo class="size-8 md:size-10 text-white" />
+        </a>
+      </div>
+    </header>
+    <p class="text-primary-300 text-base md:text-base">
+      {description}
+    </p>
+    <div>
+      {
+        technologies.map((tag) => (
+          <span class="inline-block bg-primary-200 text-primary-300 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-primary-100 dark:text-primary-200">
+            {tag}
+          </span>
+        ))
+      }
+    </div>
+  </div>
+</article>

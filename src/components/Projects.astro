@@ -1,39 +1,36 @@
 ---
 import Section from "./Section.astro";
 import Code from "@/assets/svg/code.svg";
+import CardProject from "./CardProject.astro";
+import { PROJECTS } from "@/const/PROJECTS";
+
+interface Props {
+  id?: string;
+}
+const { id } = Astro.props as Props;
 ---
 
-<Section svg={Code} title="Proyectos">
+<Section id={id} svg={Code} title="Proyectos">
   <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
-    <div class="w-full">
-      <h3 class="text-2xl font-bold">
-        <a
-          href="https://github.com/EdGonzz/portfolio-dev"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-primary-800 dark:text-primary-100"
-        >
-          Portafolio de Desarrollo Web
-        </a>
-      </h3>
-      <p class="text-base text-text-100">
-        Portafolio de Desarrollo Web con Astro.js
-      </p>
-    </div>
-    <div class="w-full">
-      <h3 class="text-2xl font-bold">
-        <a
-          href="https://github.com/EdGonzz/portfolio-dev"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-primary-800 dark:text-primary-100"
-        >
-          Portafolio de Desarrollo Web
-        </a>
-      </h3>
-      <p class="text-base text-text-100">
-        Portafolio de Desarrollo Web con Astro.js
-      </p>
-    </div>
+    {
+      PROJECTS.map((project) => (
+        <CardProject
+          title={project.title}
+          description={project.description}
+          image={project.image}
+          links={{
+            github: {
+              url: project.links.github.url,
+              logo: project.links.github.logo,
+            },
+            demo: {
+              url: project.links.demo.url,
+              logo: project.links.demo.logo,
+            },
+          }}
+          technologies={project.tags}
+        />
+      ))
+    }
   </div>
 </Section>
