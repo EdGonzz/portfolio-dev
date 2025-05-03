@@ -23,12 +23,12 @@ export const PROJECTS: Project[] = [
       },
     },
     tags: [
-      { name: "HTML", color: "bg-red-500", logo: github },
-      { name: "CSS", color: "bg-blue-500", logo: github },
-      { name: "JavaScript", color: "bg-yellow-500", logo: github },
-      { name: "TypeScript", color: "bg-blue-400", logo: github },
-      { name: "React", color: "bg-blue-600", logo: github },
-      { name: "Vite", color: "bg-green-500", logo: github },
+      { name: "HTML", classProp: "bg-red-500", logo: github },
+      { name: "CSS", classProp: "bg-blue-500", logo: github },
+      { name: "JavaScript", classProp: "bg-yellow-500", logo: github },
+      { name: "TypeScript", classProp: "bg-blue-400", logo: github },
+      { name: "React", classProp: "bg-blue-600", logo: github },
+      { name: "Vite", classProp: "bg-green-500", logo: github },
     ],
   },
 ];

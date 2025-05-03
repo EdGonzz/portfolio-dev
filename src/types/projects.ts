@@ -8,7 +8,7 @@ export interface Project {
   links: { [name: string]: { url: string; logo: any } };
   tags: Array<{
     name: string;
-    color: string;
+    classProp: string;
     logo: any;
   }>;
 }

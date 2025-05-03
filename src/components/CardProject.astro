@@ -20,7 +20,7 @@ interface Props {
   };
   technologies: Array<{
     name: string;
-    color: string;
+    classProp: string;
     logo: any;
   }>;
 }
@@ -32,9 +32,9 @@ const { title, description, image, links, technologies } = Astro.props;
   class="max-w-sm rounded-lg bg-bg-200 dark:bg-bg-100 shadow-lg flex flex-col gap-2"
 >
   <img class="rounded-t-lg" src={image.src} alt={image.alt} />
-  <div class="p-5 space-y-3">
+  <div class="p-4 space-y-3">
     <header class="flex flex-row justify-between items-center">
-      <h3 class="text-2xl text-primary-300">{title}</h3>
+      <h3 class="text-3xl text-primary-300">{title}</h3>
       <div class="flex gap-3">
         <a
           href={links.github.url}
@@ -54,13 +54,13 @@ const { title, description, image, links, technologies } = Astro.props;
         </a>
       </div>
     </header>
-    <p class="text-primary-300 text-base md:text-base">
+    <p class="text-primary-300 text-base md:text-lg">
       {description}
     </p>
-    <div class="flex flex-row flex-wrap gap-x-2 gap-y-2">
+    <div class="flex flex-row flex-wrap gap-x-1 gap-y-2">
       {
         technologies.map((tech) => (
-          <Badge class={`${tech.color}`}>
+          <Badge class={`${tech.classProp}`}>
             <tech.logo class="size-4 md:size-6" />
             <span class="text-xs">{tech.name}</span>
           </Badge>

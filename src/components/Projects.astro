@@ -30,7 +30,7 @@ const { id } = Astro.props as Props;
           }}
           technologies={project.tags.map((tag) => ({
             name: tag.name,
-            color: tag.color,
+            classProp: tag.classProp,
             logo: tag.logo,
           }))}
         />
