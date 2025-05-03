@@ -1,4 +1,6 @@
 ---
+import Badge from "./Badge.astro";
+
 interface Props {
   title: string;
   description: string;
@@ -16,7 +18,11 @@ interface Props {
       logo: any;
     };
   };
-  technologies: string[];
+  technologies: Array<{
+    name: string;
+    color: string;
+    logo: any;
+  }>;
 }
 
 const { title, description, image, links, technologies } = Astro.props;
@@ -26,7 +32,7 @@ const { title, description, image, links, technologies } = Astro.props;
   class="max-w-sm rounded-lg bg-bg-200 dark:bg-bg-100 shadow-lg flex flex-col gap-2"
 >
   <img class="rounded-t-lg" src={image.src} alt={image.alt} />
-  <div class="p-5 space-y-2">
+  <div class="p-5 space-y-3">
     <header class="flex flex-row justify-between items-center">
       <h3 class="text-2xl text-primary-300">{title}</h3>
       <div class="flex gap-3">
@@ -51,12 +57,13 @@ const { title, description, image, links, technologies } = Astro.props;
     <p class="text-primary-300 text-base md:text-base">
       {description}
     </p>
-    <div>
+    <div class="flex flex-row flex-wrap gap-x-2 gap-y-2">
       {
-        technologies.map((tag) => (
-          <span class="inline-block bg-primary-200 text-primary-300 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-primary-100 dark:text-primary-200">
-            {tag}
-          </span>
+        technologies.map((tech) => (
+          <Badge class={`${tech.color}`}>
+            <tech.logo class="size-4 md:size-6" />
+            <span class="text-xs">{tech.name}</span>
+          </Badge>
         ))
       }
     </div>

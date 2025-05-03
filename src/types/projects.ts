@@ -6,5 +6,9 @@ export interface Project {
     alt: string;
   };
   links: { [name: string]: { url: string; logo: any } };
-  tags: string[];
+  tags: Array<{
+    name: string;
+    color: string;
+    logo: any;
+  }>;
 }

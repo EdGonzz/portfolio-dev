@@ -5,7 +5,7 @@ import world from "@/assets/svg/world.svg";
 
 export const PROJECTS: Project[] = [
   {
-    title: "Portfolio",
+    title: "Reel Library",
     description:
       "Reel Library es una pagina web para navegar entre reseñas y trailers de pelicilas; una manera sencilla de entrar la mejor pelicula para ver. El proyecto demuestra el consumo de APIs y la manipulación del DOM usando JavaScript y TypeScript.",
     image: {
@@ -22,6 +22,13 @@ export const PROJECTS: Project[] = [
         logo: world,
       },
     },
-    tags: ["Astro", "TypeScript", "Tailwind CSS", "JavaScript"],
+    tags: [
+      { name: "HTML", color: "bg-red-500", logo: github },
+      { name: "CSS", color: "bg-blue-500", logo: github },
+      { name: "JavaScript", color: "bg-yellow-500", logo: github },
+      { name: "TypeScript", color: "bg-blue-400", logo: github },
+      { name: "React", color: "bg-blue-600", logo: github },
+      { name: "Vite", color: "bg-green-500", logo: github },
+    ],
   },
 ];

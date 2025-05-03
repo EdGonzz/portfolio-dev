@@ -28,7 +28,11 @@ const { id } = Astro.props as Props;
               logo: project.links.demo.logo,
             },
           }}
-          technologies={project.tags}
+          technologies={project.tags.map((tag) => ({
+            name: tag.name,
+            color: tag.color,
+            logo: tag.logo,
+          }))}
         />
       ))
     }
