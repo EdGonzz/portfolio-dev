@@ -35,22 +35,16 @@ const { title, description, image, links, technologies } = Astro.props;
   <div class="p-4 space-y-3">
     <header class="flex flex-row justify-between items-center">
       <h3 class="text-3xl text-primary-300">{title}</h3>
-      <div class="flex gap-3">
-        <a
-          href={links.github.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-primary-300 hover:text-primary-200"
-        >
-          <links.github.logo class="size-8 md:size-10 text-white" />
+      <div class="flex items-center gap-3">
+        <a href={links.github.url} target="_blank" rel="noopener noreferrer">
+          <links.github.logo
+            class="size-8 md:size-10 text-primary-300 transition-all hover:scale-110 hover:text-primary-200"
+          />
         </a>
-        <a
-          href={links.demo.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-primary-300 hover:text-primary-200"
-        >
-          <links.demo.logo class="size-8 md:size-10 text-white" />
+        <a href={links.demo.url} target="_blank" rel="noopener noreferrer">
+          <links.demo.logo
+            class="size-8 md:size-10 text-primary-300 transition-all hover:scale-110 hover:text-primary-200"
+          />
         </a>
       </div>
     </header>
@@ -61,7 +55,7 @@ const { title, description, image, links, technologies } = Astro.props;
       {
         technologies.map((tech) => (
           <Badge class={`${tech.classProp}`}>
-            <tech.logo class="size-4 md:size-6" />
+            <tech.logo class="size-4" />
             <span class="text-xs text-white">{tech.name}</span>
           </Badge>
         ))
