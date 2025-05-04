@@ -14,3 +14,11 @@
 .link {
   @apply text-white font-semibold text-sm hover:text-accent-100 hover:scale-105 transition-all;
 }
+
+.active {
+  @apply bg-accent-200/80 dark:text-black
+}
+
+.hover {
+  @apply hover:text-black hover:bg-accent-200/40
+}
