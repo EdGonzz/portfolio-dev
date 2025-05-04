@@ -1,0 +1,58 @@
+---
+import Section from "./Section.astro";
+import User from "@/assets/svg/user.svg";
+---
+
+<Section id="sobre-mi" svg={User} title="Sobre mí">
+  <header class="w-full flex flex-col items-center gap-4">
+    <img
+      src="/src/assets/images/photo.webp"
+      alt="EdGonz"
+      class="w-32 h-32 rounded-full border-[0.5px] border-gray-300"
+      loading="lazy"
+      decoding="async"
+      fetchpriority="low"
+    />
+    <div>
+      <h2 class="text-3xl font-semibold text-center text-white">
+        Edwin Contreras
+      </h2>
+      <p class="text-lg text-text-100 text-center">Desarrollador Web</p>
+    </div>
+    <div
+      id="about-buttons"
+      class="grid w-full items-center text-center grid-cols-2 gap-1 p-1 rounded-lg dark:bg-bg-100"
+      role="group"
+    >
+      <button
+        type="button"
+        class="active px-3 py-1.5 text-xs font-semibold rounded-lg text-white transition duration-200 ease-in-out"
+      >
+        Profesional
+      </button>
+      <button
+        type="button"
+        class="hover px-3 py-1.5 text-xs font-semibold text-white rounded-lg transition duration-200 ease-in-out"
+      >
+        Personal
+      </button>
+    </div>
+  </header>
+</Section>
+
+<script>
+  const aboutButtons = document.querySelectorAll(
+    "#about-buttons button"
+  ) as NodeListOf<HTMLButtonElement>;
+
+  aboutButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      aboutButtons.forEach((btn) => {
+        btn.classList.remove("active");
+        btn.classList.add("hover");
+      });
+      button.classList.remove("hover");
+      button.classList.add("active");
+    });
+  });
+</script>
