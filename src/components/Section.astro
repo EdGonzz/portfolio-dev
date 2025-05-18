@@ -1,17 +1,27 @@
 ---
 interface Props {
   title: string;
-  svg: any;
+  svg?: any;
   id?: string;
+  titleClass?: string;
+  svgClass?: string;
+  sectionClass?: string;
 }
 
-const { title, svg: Svg, id } = Astro.props as Props;
+const {
+  title,
+  svg: Svg,
+  id,
+  titleClass = "text-3xl",
+  svgClass = "size-8",
+  sectionClass = "gap-4",
+} = Astro.props as Props;
 ---
 
-<section id={id} class="w-full flex flex-col gap-4">
+<section id={id} class=`w-full flex flex-col ${sectionClass}`>
   <div class="w-full flex flex-row gap-2 items-center">
-    <Svg class="size-6 text-white" />
-    <h2 class="text-2xl font-normal text-white">{title}</h2>
+    {Svg && <Svg class={`${svgClass} text-white`} /> }
+    <h2 class=`${titleClass} font-normal text-white`>{title}</h2>
   </div>
   <slot />
 </section>
