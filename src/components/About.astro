@@ -1,27 +1,37 @@
 ---
 import Section from "./Section.astro";
 import User from "@/assets/svg/user.svg";
+import SuitCase from "@/assets/svg/suitCase.svg";
+import School from "@/assets/svg/school.svg";
+import { SKILLS } from "@/const/SKILLS";
+import { HOBBIES } from "@/const/HOBBIES";
+import { SOCIAL } from "@/const/SOCIALS";
+import Badge from "./Badge.astro";
 ---
 
-<Section id="sobre-mi" svg={User} title="Sobre mí">
-  <header class="w-full flex flex-col items-center gap-4">
-    <img
-      src="/src/assets/images/photo.webp"
-      alt="EdGonz"
-      class="w-32 h-32 rounded-full border-[0.5px] border-gray-300"
-      loading="lazy"
-      decoding="async"
-      fetchpriority="low"
-    />
-    <div>
-      <h2 class="text-3xl font-semibold text-center text-white">
-        Edwin Contreras
-      </h2>
-      <p class="text-lg text-text-100 text-center">Desarrollador Web</p>
-    </div>
+<Section id="about-me" svg={User} title="Sobre mí">
+  <div
+    class="w-full flex flex-col items-center gap-4 rounded-lg p-4 bg-bg-200 dark:bg-bg-100 shadow-lg"
+  >
+    <header class="flex flex-col items-center gap-4">
+      <img
+        src="/src/assets/images/photo.webp"
+        alt="EdGonz"
+        class="w-32 h-32 rounded-full border-[0.5px] border-gray-300"
+        loading="lazy"
+        decoding="async"
+        fetchpriority="low"
+      />
+      <div>
+        <h2 class="text-3xl font-semibold text-center text-white">
+          Edwin Contreras
+        </h2>
+        <p class="text-lg text-text-100 text-center">Desarrollador Web</p>
+      </div>
+    </header>
     <div
       id="about-buttons"
-      class="grid w-full items-center text-center grid-cols-2 gap-1 p-1 rounded-lg dark:bg-bg-100"
+      class="grid w-full bg-bg-300/50 items-center text-center grid-cols-2 gap-1 p-1 rounded-lg"
       role="group"
     >
       <button
@@ -37,22 +47,128 @@ import User from "@/assets/svg/user.svg";
         Personal
       </button>
     </div>
-  </header>
-</Section>
+    <div id="professional-content">
+      <Section
+        svg={SuitCase}
+        title="Experiencia Laboral"
+        titleClass="text-lg"
+        svgClass="size-5"
+        sectionClass="gap-2 mb-3"
+      >
+        <p class="text-primary-300 text-base md:text-lg">
+          Aunque no he trabajado formalmente como desarrollador, en mis empleos
+          anteriores he colaborado en equipo para optimizar procesos y la
+          administración de la empresa, mejorando la contabilidad con
+          herramientas como Excel y buscando siempre la eficiencia y mejora
+          continua.
+        </p>
+      </Section>
+      <Section
+        svg={School}
+        title="Educación"
+        titleClass="text-lg"
+        svgClass="size-5"
+        sectionClass="gap-2 mb-3"
+      >
+        <p class="text-primary-300 text-base md:text-lg">
+          Empecé en la programación por curiosidad sobre Blockchain, pero me
+          apasioné por el desarrollo web. Actualmente, me enfoco en perfeccionar
+          mis habilidades Frontend y mi prioridad es crear soluciones
+          eficientes, aunque planeo aprender Backend pronto.
+        </p>
+      </Section>
+      <Section
+        title="Habilidades"
+        titleClass="text-lg"
+        sectionClass="flex flex-row flex-wrap gap-x-1 gap-y-2"
+      >
+        {
+          SKILLS.map((skill) => (
+            <Badge class={`${skill.classProp}`}>
+              <skill.logo class="size-4" />
+              <span class="text-xs text-white">{skill.skill}</span>
+            </Badge>
+          ))
+        }
+      </Section>
+    </div>
+    <div id="personal-content" class="hidden">
+      <Section
+        id="personal"
+        svg={User}
+        title="Sobre mí"
+        titleClass="text-lg"
+        svgClass="size-5"
+        sectionClass="gap-2 mb-3"
+      >
+        <p class="text-primary-300 text-base md:text-lg">
+          Soy una persona curiosa y siempre dispuesta a aprender, enfrentando
+          desafíos para mejorar. Disfruto resolver problemas explorando
+          distintas soluciones. En mi tiempo libre, comparto con mi familia,
+          juego videojuegos y exploro nuevas tecnologías.
+        </p>
+        <p class="text-primary-300 text-base md:text-lg">
+          Mis objetivos son conseguir un buen empleo, crecer como desarrollador
+          y crear proyectos que generen un impacto positivo.
+        </p>
+      </Section>
+      <Section
+        title="Hobbies"
+        titleClass="text-lg"
+        svgClass="size-5"
+        sectionClass="flex flex-row flex-wrap gap-x-1 gap-y-2"
+      >
+        {
+          HOBBIES.map((hobby) => (
+            <Badge class={`${hobby.classProp}`}>
+              <hobby.logo class="size-4 text-white" />
+              <span class="text-xs text-white">{hobby.name}</span>
+            </Badge>
+          ))
+        }
+      </Section>
+    </div>
+    <div class="w-full flex flex-row gap-2 mt-3">
+      {
+        SOCIAL.filter((social) => social.id !== "cv").map((social) => (
+          <Badge
+            href={social.url}
+            class={social.class}
+            AnchorClass="hover:scale-110 transition-transform"
+          >
+            <social.image.logo
+              class="size-6 md:size-8 text-white"
+              aria-label={`Logo de ${social.name}`}
+              role="img"
+            />
+          </Badge>
+        ))
+      }
+    </div>
+  </div>
 
-<script>
-  const aboutButtons = document.querySelectorAll(
-    "#about-buttons button"
-  ) as NodeListOf<HTMLButtonElement>;
+  <script>
+    const aboutButtons = document.querySelectorAll(
+      "#about-buttons button"
+    ) as NodeListOf<HTMLButtonElement>;
+    const professionalContent = document.getElementById(
+      "professional-content"
+    ) as HTMLElement;
+    const personalContent = document.getElementById(
+      "personal-content"
+    ) as HTMLElement;
 
-  aboutButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      aboutButtons.forEach((btn) => {
-        btn.classList.remove("active");
-        btn.classList.add("hover");
+    aboutButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        aboutButtons.forEach((btn) => {
+          btn.classList.remove("active");
+          btn.classList.add("hover");
+        });
+        professionalContent.classList.toggle("hidden");
+        personalContent.classList.toggle("hidden");
+        button.classList.remove("hover");
+        button.classList.add("active");
       });
-      button.classList.remove("hover");
-      button.classList.add("active");
     });
-  });
-</script>
+  </script>
+</Section>
