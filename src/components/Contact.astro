@@ -3,61 +3,11 @@ import { SOCIAL } from "@/const/SOCIALS";
 import Badge from "./Badge.astro";
 ---
 
-<section
-  id="contacto"
-  class="w-full max-w-md bg-bg-200 dark:bg-bg-100 rounded-xl shadow-lg p-4 flex flex-col gap-5"
->
-  <header class="flex flex-col gap-2">
-    <h2 class="text-3xl font-bold text-white">Contacto</h2>
-    <p class="text-text-100">
-      ¿Tienes alguna pregunta o propuesta?<br />¡Contáctame!
-    </p>
-  </header>
-  <form class="w-full flex flex-col gap-4">
-    <div class="flex flex-col space-y-2">
-      <label class="text-sm font-semibold text-white" for="nombre">Nombre</label
-      >
-      <input
-        type="text"
-        name="nombre"
-        id="nombre"
-        placeholder="Tu nombre"
-        required
-        class="p-3 rounded border border-primary-100 bg-bg-300/50 text-white focus:outline-none focus:border-primary-200"
-      />
-    </div>
-    <div class="flex flex-col space-y-2">
-      <label class="text-sm font-semibold text-white" for="email">Email</label>
-      <input
-        type="email"
-        name="email"
-        id="email"
-        placeholder="songoku@gmail.com"
-        required
-        class="p-3 rounded border border-primary-100 bg-bg-300/50 text-white focus:outline-none focus:border-primary-200"
-      />
-    </div>
-    <div class="flex flex-col space-y-2">
-      <label class="text-sm font-semibold text-white" for="mensaje"
-        >Mensaje</label
-      >
-      <textarea
-        name="mensaje"
-        id="mensaje"
-        placeholder="Tu mensaje aquí..."
-        required
-        rows="4"
-        class="p-3 rounded border border-primary-100 bg-bg-300/50 text-white focus:outline-none focus:border-primary-200"
-      ></textarea>
-    </div>
-    <button
-      type="submit"
-      class="bg-primary-200 hover:bg-primary-100 font-semibold py-2 px-6 rounded transition-colors mt-2"
-    >
-      Enviar mensaje
-    </button>
-  </form>
-  <div class="w-full flex flex-col items-center gap-2 mt-4">
+<section id="contacto" class="w-full max-w-md p-4 flex flex-col gap-6">
+  <p class="text-text-100 text-center">
+    ¿Tienes alguna pregunta o propuesta?<br />¡Contáctame!
+  </p>
+  <div class="w-full flex flex-col items-center gap-2">
     <h3 class="text-lg font-bold text-white">Contacto directo</h3>
     <div class="flex items-center gap-2 text-text-100">
       <a
@@ -67,7 +17,7 @@ import Badge from "./Badge.astro";
       >
     </div>
   </div>
-  <div class="w-full flex flex-col items-center gap-2 mt-4">
+  <div class="w-full flex flex-col items-center gap-2">
     <h3 class="text-lg font-bold text-white">Redes sociales</h3>
     <div class="flex flex-row gap-3 justify-center">
       {
