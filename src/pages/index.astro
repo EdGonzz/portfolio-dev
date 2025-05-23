@@ -2,6 +2,7 @@
 import Presentation from "@/components/Presentation.astro";
 import Projects from "@/components/Projects.astro";
 import About from "@/components/About.astro";
+import Contact from "@/components/Contact.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
 
@@ -9,9 +10,10 @@ import Layout from "@/layouts/Layout.astro";
   title="Portafolio de EdGonz - Desarrollador y Programador Web"
   description="Desarrollo soluciones web personalizadas para potenciar ideas y negocios. Diseño, desarrollo y optimización de sitios web con tecnología moderna y escalable."
 >
-  <main class="w-full h-auto pb-64 flex flex-col items-center px-7 gap-10 z-10">
+  <main class="w-full h-auto pb-10 flex flex-col items-center px-7 gap-10 z-10">
     <Presentation />
     <Projects id="projects" />
     <About id="sobre-mi" />
+    <Contact id="contacto" />
   </main>
 </Layout>
