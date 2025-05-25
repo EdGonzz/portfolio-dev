@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/vercel": "^8.1.4",
     "@fontsource-variable/ubuntu-sans": "^5.2.6",
     "@tailwindcss/vite": "^4.0.16",
     "astro": "^5.6.1",
