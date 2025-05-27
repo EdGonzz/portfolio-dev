@@ -18,9 +18,9 @@ const {
 } = Astro.props as Props;
 ---
 
-<section id={id} class=`w-full flex flex-col ${sectionClass}`>
+<section id={id} class=`w-full max-w-3xl flex flex-col ${sectionClass}`>
   <div class="w-full flex flex-row gap-2 items-center">
-    {Svg && <Svg class={`${svgClass} text-white`} /> }
+    {Svg && <Svg class={`${svgClass} text-white`} />}
     <h2 class=`${titleClass} font-normal text-white`>{title}</h2>
   </div>
   <slot />

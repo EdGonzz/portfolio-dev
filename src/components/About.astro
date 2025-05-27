@@ -11,9 +11,9 @@ import Badge from "./Badge.astro";
 
 <Section id="about-me" svg={User} title="Sobre mí">
   <div
-    class="w-full flex flex-col items-center gap-4 rounded-lg p-4 bg-bg-200 dark:bg-bg-100 shadow-lg"
+    class="w-full max-w-3xl flex flex-col items-center gap-4 rounded-lg p-4 bg-bg-200 dark:bg-bg-100 shadow-lg md:items-start md:gap-8"
   >
-    <header class="flex flex-col items-center gap-4">
+    <header class="flex flex-col items-center gap-4 md:flex-row md:gap-6">
       <img
         src="/src/assets/images/photo.webp"
         alt="EdGonz"
@@ -22,11 +22,9 @@ import Badge from "./Badge.astro";
         decoding="async"
         fetchpriority="low"
       />
-      <div>
-        <h2 class="text-3xl font-semibold text-center text-white">
-          Edwin Contreras
-        </h2>
-        <p class="text-lg text-text-100 text-center">Desarrollador Web</p>
+      <div class="text-center md:text-start">
+        <h2 class="text-3xl font-semibold text-white">Edwin Contreras</h2>
+        <p class="text-lg text-text-100">Desarrollador Web</p>
       </div>
     </header>
     <div
@@ -113,7 +111,7 @@ import Badge from "./Badge.astro";
         </p>
       </Section>
       <Section
-        title="Hobbies"
+        title="Pasatiempos"
         titleClass="text-lg"
         svgClass="size-5"
         sectionClass="flex flex-row flex-wrap gap-x-1 gap-y-2"
@@ -137,7 +135,7 @@ import Badge from "./Badge.astro";
             AnchorClass="hover:scale-110 transition-transform"
           >
             <social.image.logo
-              class="size-6 md:size-8 text-white"
+              class="size-6 md:size-7 text-white"
               aria-label={`Logo de ${social.name}`}
               role="img"
             />
