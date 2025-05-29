@@ -39,7 +39,7 @@ export const SOCIAL: Social[] = [
   {
     id: "cv",
     name: "CV",
-    url: "https://drive.google.com/file/d/1-0-1-2-3-4-5-6-7-8-9-0/view?usp=sharing",
+    url: "https://docs.google.com/document/d/e/2PACX-1vR9bU8Cfe6bMfPLrXV8vP_cpusKD3cSb-Z2Dr7IZDE9_hS_gRg_X7OTq4Mo73S-5A/pub",
     label: "CV",
     image: {
       logo: cv,
