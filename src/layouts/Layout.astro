@@ -6,9 +6,11 @@ import Nav from "@/components/Nav.astro";
 interface Pros {
   title: string;
   description: string;
+  keywords: string;
+  canonical?: string;
 }
 
-const { title, description } = Astro.props as Pros;
+const { title, description, keywords, canonical } = Astro.props as Pros;
 ---
 
 <!doctype html>
@@ -16,9 +18,50 @@ const { title, description } = Astro.props as Pros;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+
+    <!-- SEO -->
+    <meta name="description" content=`${description}` />
+    <meta name="keywords" content=`${keywords}` />
+    <meta name="author" content="Edwin Contreras" />
+    <meta name="application-name" content="Portafolio" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href=`${canonical}` />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content=`${title}` />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content=`${canonical}` />
+    <meta
+      property="og:image"
+      content=`https://github.com/EdGonzz/portfolio-dev/blob/main/public/banner.webp?raw=true`
+    />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta
+      property="og:igame:alt"
+      content=`Cartilla de presentacion de Edwin Contretras, desarrollador web y programador.`
+    />
+    <meta property="og:description" content=`${description}` />
+    <meta property="og:site_name" content=`${title}` />
+
+    <!-- Open Graph (Twitter) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Ed_Gonzz_" />
+    <meta name="twitter:creator" content="@Ed_Gonzz_" />
+    <meta property="twitter:domain" content="edgonzz.github.io" />
+    <meta name="twitter:title" content=`${title}` />
+    <meta name="twitter:url" content=`${canonical}` />
+    <meta
+      name="twitter:image"
+      content=`https://github.com/EdGonzz/portfolio-dev/blob/main/public/banner.webp?raw=true`
+    />
+    <meta
+      name="twitter:image:alt"
+      content=`Cartilla de presentacion de Edwin Contretras, desarrollador web y programador.`
+    />
+    <meta name="twitter:description" content=`${description}` />
   </head>
   <body
     ><div class="fixed inset-0 h-full w-full bg-neutral-900">
