@@ -13,6 +13,58 @@ import css from "@/assets/svg/css.svg";
 
 export const PROJECTS: Project[] = [
   {
+    title: "Tranca Seguro",
+    description:
+      "Tranca Seguro es un generador de contraseñas web diseñado para ayudar a los usuarios a crear contraseñas seguras y criptográficamente seguras. Desarrollado con Astro y Tailwind CSS, ofrece una experiencia rápida, accesible e intuitiva para generar y gestionar credenciales seguras.",
+    image: {
+      src: "https://github.com/EdGonzz/tranca-seguro/raw/main/public/device-mockup.webp",
+      alt: "Captura de pantalla de la aplicación móvil 'Tranca Seguro', un generador de contraseñas seguras. La interfaz muestra un diseño oscuro con una contraseña oculta, un indicador de fortaleza en color verde marcado como 'Fuerte' y un selector para ajustar la longitud de la clave.",
+    },
+    links: {
+      github: {
+        url: "https://github.com/EdGonzz/tranca-seguro",
+        logo: github,
+      },
+      demo: {
+        url: "https://tranca-seguro.vercel.app/",
+        logo: world,
+      },
+    },
+    tags: [
+      {
+        name: "Astro",
+        classProp: "bg-[#e03872]/50 border-[#e03872] border-1",
+        logo: Astro,
+      },
+      {
+        name: "Tailwind CSS",
+        classProp: "bg-[#38bdf8]/50 border-[#38bdf8] border-1",
+        logo: tailwind,
+      },
+      {
+        name: "TypeScript",
+        classProp: "bg-[#3178c6]/50 border-[#3178c6] border-1",
+        logo: typescript,
+      },
+      {
+        name: "JavaScript",
+        classProp: "bg-[#f0db4f]/50 border-[#f0db4f] border-1",
+        logo: javascript,
+      },
+      {
+        name: "Vercel",
+        classProp: "bg-[#000000]/50 border-[#000000] border-1",
+        logo: vercel,
+      },
+      {
+        name: "PNPM",
+        classProp: "bg-[#f9ad00]/50 border-[#f9ad00] border-1",
+        logo: pnpm,
+      },
+    ],
+  },
+
+  {
     title: "Reel Library",
     description:
       "Reel Library es una pagina web para navegar entre reseñas y trailers de pelicilas; una manera sencilla de entrar la mejor pelicula para ver. El proyecto demuestra el consumo de APIs y la manipulación del DOM usando JavaScript y TypeScript.",
@@ -138,35 +190,35 @@ export const PROJECTS: Project[] = [
     ],
   },
 
-  {
-    title: "Batatabit",
-    description:
-      "Curso Mobile First es una landing page desarrollada como parte del Curso de Responsive Design: Maquetación Mobile First en Platzi. El proyecto se centra en aplicar la metodología mobile-first, comenzando el diseño para dispositivos móviles y adaptándolo progresivamente a pantallas más grandes. Esta práctica mejora la experiencia del usuario y optimiza el tiempo de desarrollo.",
-    image: {
-      src: "https://github.com/EdGonzz/curso-mobile-first/raw/main/assets/img/og-image.webp",
-      alt: "Vista previa de la página principal de Batatabit, una plataforma de intercambio de criptomonedas con un diseño en tonos naranja y blanco. El encabezado destaca el eslogan 'La próxima revolución en el intercambio de criptomonedas' seguido del logotipo de Bitcoin y una sección que informa sobre tasas de cambio en tiempo real.",
-    },
-    links: {
-      github: {
-        url: "https://github.com/EdGonzz/curso-mobile-first",
-        logo: github,
-      },
-      demo: {
-        url: "https://edgonzz.github.io/curso-mobile-first/",
-        logo: world,
-      },
-    },
-    tags: [
-      {
-        name: "HTML",
-        classProp: "bg-[#e34c26]/50 border-[#e34c26] border-1",
-        logo: html,
-      },
-      {
-        name: "CSS",
-        classProp: "bg-[#663399]/50 border-[#663399] border-1",
-        logo: css,
-      },
-    ],
-  },
+  // {
+  //   title: "Batatabit",
+  //   description:
+  //     "Curso Mobile First es una landing page desarrollada como parte del Curso de Responsive Design: Maquetación Mobile First en Platzi. El proyecto se centra en aplicar la metodología mobile-first, comenzando el diseño para dispositivos móviles y adaptándolo progresivamente a pantallas más grandes. Esta práctica mejora la experiencia del usuario y optimiza el tiempo de desarrollo.",
+  //   image: {
+  //     src: "https://github.com/EdGonzz/curso-mobile-first/raw/main/assets/img/og-image.webp",
+  //     alt: "Vista previa de la página principal de Batatabit, una plataforma de intercambio de criptomonedas con un diseño en tonos naranja y blanco. El encabezado destaca el eslogan 'La próxima revolución en el intercambio de criptomonedas' seguido del logotipo de Bitcoin y una sección que informa sobre tasas de cambio en tiempo real.",
+  //   },
+  //   links: {
+  //     github: {
+  //       url: "https://github.com/EdGonzz/curso-mobile-first",
+  //       logo: github,
+  //     },
+  //     demo: {
+  //       url: "https://edgonzz.github.io/curso-mobile-first/",
+  //       logo: world,
+  //     },
+  //   },
+  //   tags: [
+  //     {
+  //       name: "HTML",
+  //       classProp: "bg-[#e34c26]/50 border-[#e34c26] border-1",
+  //       logo: html,
+  //     },
+  //     {
+  //       name: "CSS",
+  //       classProp: "bg-[#663399]/50 border-[#663399] border-1",
+  //       logo: css,
+  //     },
+  //   ],
+  // },
 ];
